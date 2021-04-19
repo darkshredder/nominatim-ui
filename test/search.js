@@ -22,6 +22,7 @@ describe('Search Page', function () {
     before(async function () {
       page = await browser.newPage();
       await page.goto('http://localhost:9999/search.html');
+      console.log(await browser.userAgent());
       await page.type('input[name=q]', 'City of London');
       await page.click('button[type=submit]');
       await page.waitForSelector('#searchresults');
