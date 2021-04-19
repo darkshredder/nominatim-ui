@@ -23,9 +23,7 @@ jobs:
         run: yarn lint
 
       - name: Testing
-        uses: ianwalter/puppeteer@master
-        with:
-          args: yarn test
+        run: yarn test
 
       - name: Build
         run: yarn build
