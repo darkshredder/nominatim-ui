@@ -21,10 +21,9 @@ describe('Search Page', function () {
   describe('Search for City of London', function () {
     before(async function () {
       page = await browser.newPage();
-      await page.goto('http://localhost:9999/search.html', {
-        waitUntil: 'load'
-      });
-      await page.type('input[name=q]', 'City of London');
+      await page.goto('http://localhost:9999/search.html');
+      await page.evaluate('input[name=q]', elem => elem.type('City of London'));
+      // await page.type('input[name=q]', 'City of London');
       await page.click('button[type=submit]');
       await page.waitForSelector('#searchresults');
       // await page.screenshot({ path: "./screen.png", fullPage: true });
