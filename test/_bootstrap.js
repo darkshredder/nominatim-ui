@@ -25,7 +25,6 @@ Nominatim_Config.Nominatim_API_Endpoint = 'https:/nominatim.openstreetmap.org/';
   // 3. Create browser instance
   global.browser = await puppeteer.launch({
     defaultViewport: { width: 1024, height: 768 },
-    args: ['--no-sandbox'],
     timeout: 5000
   });
 };
