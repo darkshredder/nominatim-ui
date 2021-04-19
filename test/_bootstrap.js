@@ -9,8 +9,8 @@ exports.mochaGlobalSetup = async function () {
   const workdir = 'dist_for_testing';
 
   // 1. Prepare build directory
-  fse.mkdir(workdir);
-  fse.copy('dist', workdir);
+  fse.mkdirpSync(workdir);
+  fse.copySync('dist', workdir);
 
   fse.outputFile(workdir + '/theme/config.theme.js', `
 Nominatim_Config.Nominatim_API_Endpoint = 'https:/nominatim.openstreetmap.org/';
