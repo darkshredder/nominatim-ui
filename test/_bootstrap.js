@@ -9,8 +9,8 @@ exports.mochaGlobalSetup = async function () {
   const workdir = 'dist_for_testing';
 
   // 1. Prepare build directory
-  fse.mkdirpSync(workdir);
-  fse.copySync('dist', workdir);
+  fse.mkdir(workdir);
+  fse.copy('dist', workdir);
 
   fse.outputFile(workdir + '/theme/config.theme.js', `
 Nominatim_Config.Nominatim_API_Endpoint = 'https:/nominatim.openstreetmap.org/';
@@ -25,7 +25,7 @@ Nominatim_Config.Nominatim_API_Endpoint = 'https:/nominatim.openstreetmap.org/';
   // 3. Create browser instance
   global.browser = await puppeteer.launch({
     defaultViewport: { width: 1024, height: 768 },
-    timeout: 0
+    timeout: 5000
   });
 };
 

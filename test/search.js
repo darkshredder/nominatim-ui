@@ -21,8 +21,7 @@ describe('Search Page', function () {
   describe('Search for City of London', function () {
     before(async function () {
       page = await browser.newPage();
-      await page.goto('http://localhost:9999/search.html', { timeout: 0 });
-      await page.waitForSelector('input[name=q]');
+      await page.goto('http://localhost:9999/search.html');
       await page.type('input[name=q]', 'City of London');
       await page.click('button[type=submit]');
       await page.waitForSelector('#searchresults');
