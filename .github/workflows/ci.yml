@@ -22,8 +22,8 @@ jobs:
       - name: Linting
         run: yarn lint
 
-      - name: Testing
-        uses: ianwalter/puppeteer@main
+      - name: Test
+        uses: ianwalter/puppeteer@v2.0.0
         with:
           args: yarn test
 
